@@ -1,13 +1,13 @@
 {
-  "name": "@tachyon/example-basic",
+  "name": "@tachyonjs/example-basic",
   "private": true,
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@tachyon/core": "*",
-    "@tachyon/express": "*"
+    "@tachyonjs/core": "*",
+    "@tachyonjs/express": "*"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",

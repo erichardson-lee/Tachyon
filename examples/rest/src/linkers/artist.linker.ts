@@ -1,5 +1,5 @@
-import { LinkerModule } from '@tachyon/core';
-import { Router, useExpress } from '@tachyon/express';
+import { LinkerModule } from '@tachyonjs/core';
+import { Router, useExpress } from '@tachyonjs/express';
 import { EntityNotFoundError } from 'typeorm/error/EntityNotFoundError';
 import { useArtistRepository } from '../entities/artist.entity';
 

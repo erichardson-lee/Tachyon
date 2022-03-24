@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { UseTypeOrmRepository } from '@tachyon/typeorm';
+import { UseTypeOrmRepository } from '@tachyonjs/typeorm';
 
 @Entity()
 export class Artist {

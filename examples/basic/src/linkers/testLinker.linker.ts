@@ -1,5 +1,5 @@
-import { LinkerModule } from '@tachyon/core';
-import { useExpress } from '@tachyon/express';
+import { LinkerModule } from '@tachyonjs/core';
+import { useExpress } from '@tachyonjs/express';
 
 export default {
   name: 'testLinker',

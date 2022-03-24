@@ -1,5 +1,5 @@
-import { LoadLinkers } from '@tachyon/core';
-import { useExpress } from '@tachyon/express';
+import { LoadLinkers } from '@tachyonjs/core';
+import { useExpress } from '@tachyonjs/express';
 import { join } from 'path';
 
 const setup = async () => {

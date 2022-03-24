@@ -1,14 +1,14 @@
 {
-  "name": "@tachyon/example-rest",
+  "name": "@tachyonjs/example-rest",
   "private": true,
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@tachyon/core": "*",
-    "@tachyon/express": "*",
-    "@tachyon/typeorm": "*",
+    "@tachyonjs/core": "*",
+    "@tachyonjs/express": "*",
+    "@tachyonjs/typeorm": "*",
     "body-parser": "^1.19.2",
     "sqlite3": "^5.0.2",
     "typeorm": "^0.3.3"

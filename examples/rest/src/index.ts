@@ -1,7 +1,7 @@
 import 'reflect-metadata';
-import { LoadLinkers } from '@tachyon/core';
-import { useExpress } from '@tachyon/express';
-import { initializeTypeOrm, useTypeOrm } from '@tachyon/typeorm';
+import { LoadLinkers } from '@tachyonjs/core';
+import { useExpress } from '@tachyonjs/express';
+import { initializeTypeOrm, useTypeOrm } from '@tachyonjs/typeorm';
 import { join } from 'path';
 import bodyParser from 'body-parser';
 
