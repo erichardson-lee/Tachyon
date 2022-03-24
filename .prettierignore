@@ -1,0 +1,10 @@
+.yarn/
+**/node_modules/
+**/dist/
+
+*.png
+*.svg
+*.jpg
+
+*.gitignore
+*.gitkeep
