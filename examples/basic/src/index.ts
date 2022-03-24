@@ -1,7 +1,15 @@
+import { LoadLinkers } from '@tachyon/core';
 import { useExpress } from '@tachyon/express';
+import { join } from 'path';
 
-const express = useExpress();
+const setup = async () => {
+  const express = useExpress();
 
-express.listen(3000, () => {
-  console.log('Listening on port 3000');
-});
+  await LoadLinkers(join(__dirname, 'linkers'));
+
+  express.listen(3000, () => {
+    console.log('Listening on port 3000');
+  });
+};
+
+void setup();
