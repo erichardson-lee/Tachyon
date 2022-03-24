@@ -6,7 +6,8 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@tachyon/core": "*"
+    "@tachyon/core": "*",
+    "@tachyon/express": "*"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",

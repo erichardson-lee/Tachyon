@@ -1,3 +1,7 @@
-import { greeter } from '@tachyon/core';
+import { useExpress } from '@tachyon/express';
 
-console.log(greeter('World'));
+const express = useExpress();
+
+express.listen(3000, () => {
+  console.log('Listening on port 3000');
+});

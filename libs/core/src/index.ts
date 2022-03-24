@@ -1,3 +1,4 @@
-export const greeter = (name: string) => {
-  return `Hello ${name}`;
+export type LinkerModule = {
+  name: string;
+  install: () => void;
 };
