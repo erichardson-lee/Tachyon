@@ -1,17 +1,17 @@
 {
-  "name": "turborepo-yarnv2-base",
+  "name": "@tachyon/monorepo",
   "private": true,
   "packageManager": "yarn@3.1.1",
   "scripts": {
     "build": "turbo run build",
     "test": "turbo run test",
-    "lint": "eslint '{apps,libs}/**/src/**/*.{js,ts,vue}'",
+    "lint": "eslint '{examples,libs}/**/src/**/*.{js,ts,vue}'",
     "lint:dependencies": "check-dependency-version-consistency .",
-    "format": "prettier --config .prettierrc '{apps,libs}/**/src/**/*' --write",
+    "format": "prettier --config .prettierrc '{examples,libs}/**/src/**/*' --write",
     "dev": "turbo run dev"
   },
   "workspaces": [
-    "apps/*",
+    "examples/*",
     "libs/*"
   ],
   "devDependencies": {
