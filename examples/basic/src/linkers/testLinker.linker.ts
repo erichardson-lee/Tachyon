@@ -6,8 +6,12 @@ export default {
   install() {
     const express = useExpress();
 
+    express.get('/', (req, res) => {
+      res.send('Hello World!');
+    });
+
     express.get('/:name', (req, res) => {
-      res.json(req.params);
+      res.send(`Hello ${req.params.name}`);
     });
   },
 } as LinkerModule;
