@@ -1,4 +1,5 @@
 import Fastify, { FastifyInstance } from 'fastify';
+export { FastifyRequest, FastifyReply } from 'fastify';
 
 const apps: Record<string, FastifyInstance> = {};
 

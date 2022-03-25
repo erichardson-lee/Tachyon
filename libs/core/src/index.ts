@@ -6,6 +6,10 @@ export type LinkerModule = {
   install: () => void;
 };
 
+export function defineLinker(linker: LinkerModule): LinkerModule {
+  return linker;
+}
+
 export async function LoadLinkers(
   linkerDir = join(process.cwd(), './linkers'),
   logger = console,
