@@ -7,7 +7,7 @@
     "dist/**/*"
   ],
   "scripts": {
-    "build": "rimraf -g ./dist/**/* && tsc",
+    "build": "rimraf dist && tsc",
     "publish": "yarn npm publish --access public"
   },
   "peerDependencies": {
