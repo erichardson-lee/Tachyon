@@ -133,3 +133,6 @@ dist
 
 # Turborepo
 .turbo/
+
+# Environement variables
+*.env
