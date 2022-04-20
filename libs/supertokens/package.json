@@ -1,6 +1,6 @@
 {
   "name": "@tachyonjs/supertokens",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -11,14 +11,14 @@
     "publish": "yarn npm publish --access public"
   },
   "dependencies": {
+    "@tachyonjs/fastify": "workspace:*",
     "fastify-cors": "^6.0.3",
     "fastify-formbody": "^5.2.0",
-    "supertokens-node": "^9.1.1",
-    "@tachyonjs/fastify": "*"
+    "supertokens-node": "^9.1.1"
   },
   "peerDependencies": {
-    "@tachyonjs/core": "^0.0.0",
-    "@tachyonjs/fastify": "^0.0.0"
+    "@tachyonjs/core": "workspace:*",
+    "@tachyonjs/fastify": "workspace:*"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",

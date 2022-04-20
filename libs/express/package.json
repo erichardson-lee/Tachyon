@@ -1,6 +1,7 @@
 {
   "name": "@tachyonjs/express",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "Express.js wrapper for TachyonJs, use fastify if possible for your workload",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -11,7 +12,7 @@
     "publish": "yarn npm publish --access public"
   },
   "peerDependencies": {
-    "@tachyonjs/core": "^0.0.0"
+    "@tachyonjs/core": "workspace:*"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",
