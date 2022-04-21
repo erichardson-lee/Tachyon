@@ -136,3 +136,9 @@ dist
 
 # Environement variables
 *.env
+
+# VSCode Settings
+.vscode/settings.json
+
+# Generated Documentation
+docs/api

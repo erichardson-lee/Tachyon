@@ -5,6 +5,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "docs": "typedoc --readme README.md --entryPointStrategy packages . --name 'Tachyon API' --out docs/api",
     "format": "prettier --config .prettierrc '{examples,libs}/**/src/**/*' --write",
     "lint:dependencies": "check-dependency-version-consistency .",
     "lint": "eslint '{examples,libs}/**/src/**/*.{js,ts,vue}'",
@@ -26,6 +27,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.5.1",
     "turbo": "^1.1.3",
+    "typedoc": "^0.22.15",
     "typescript": "^4.5.5"
   }
 }
