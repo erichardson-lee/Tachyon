@@ -124,7 +124,6 @@ __metadata:
     "@tsconfig/node16": ^1.0.2
     "@types/node": ^17.0.23
     rimraf: ^3.0.2
-    typedoc: ^0.22.15
     typescript: ^4.6.2
   languageName: unknown
   linkType: soft
@@ -182,7 +181,6 @@ __metadata:
     "@types/node": ^17.0.23
     express: ^4.17.3
     rimraf: ^3.0.2
-    typedoc: ^0.22.15
     typescript: ^4.6.2
   peerDependencies:
     "@tachyonjs/core": "workspace:*"
@@ -197,7 +195,6 @@ __metadata:
     "@types/node": ^17.0.23
     fastify: ^3.27.4
     rimraf: ^3.0.2
-    typedoc: ^0.22.15
     typescript: ^4.6.2
   peerDependencies:
     "@tachyonjs/core": "workspace:*"
@@ -235,7 +232,6 @@ __metadata:
     fastify-formbody: ^5.2.0
     rimraf: ^3.0.2
     supertokens-node: ^9.1.1
-    typedoc: ^0.22.15
     typescript: ^4.6.2
   peerDependencies:
     "@tachyonjs/core": "workspace:*"
@@ -250,7 +246,6 @@ __metadata:
     "@tsconfig/node16": ^1.0.2
     "@types/node": ^17.0.23
     rimraf: ^3.0.2
-    typedoc: ^0.22.15
     typescript: ^4.6.2
   peerDependencies:
     "@tachyonjs/core": "workspace:*"
