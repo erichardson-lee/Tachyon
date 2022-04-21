@@ -5,6 +5,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "docs": "turbo run docs",
     "format": "prettier --config .prettierrc '{examples,libs}/**/src/**/*' --write",
     "lint:dependencies": "check-dependency-version-consistency .",
     "lint": "eslint '{examples,libs}/**/src/**/*.{js,ts,vue}'",
