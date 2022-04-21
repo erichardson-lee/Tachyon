@@ -28,12 +28,6 @@
         "build"
       ],
       "outputs": []
-    },
-    "docs": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [ "docs/**" ]
     }
   }
 }
