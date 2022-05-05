@@ -1,0 +1,17 @@
+GET http://localhost:3002/
+
+###
+
+GET http://localhost:3002/basic
+Authorization:Bearer eyJhbGciOiJub25lIn0.eyJoZWxsbyI6IndvcmxkIn0.
+
+###
+
+GET http://localhost:3002/validate
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJoZWxsbyI6IndvcmxkIn0.
+
+###
+
+GET http://localhost:3002/scopes
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJoZWxsbyI6IndvcmxkIn0.
+

@@ -10,6 +10,7 @@ export type { JWTValidateFunction } from './JWTValidateFunction';
 import type { JWTValidatorConfig } from './JWTValidatorConfig';
 export type { JWTValidatorConfig } from './JWTValidatorConfig';
 
+export const JWT_REGEX = /^[A-Za-z0-9-_]*\.[A-Za-z0-9-_]*\.[A-Za-z0-9-_]*$/;
 const jwksClients: Record<string, JwksClient> = {};
 
 /**
@@ -31,9 +32,10 @@ export function getJWTValidator<DefaultPayload extends JwtPayload>(
   return async <Payload extends DefaultPayload = DefaultPayload>(
     jwt: string,
   ): Promise<Payload> => {
-    if (!jwksClients[key]) {
+    if (!jwksClients[key] && cfg.jwks_uri) {
+      console.log('Creating JWKS Client');
       jwksClients[key] = new JwksClient({
-        jwksUri: cfg.openIdConfig.jwks_uri,
+        jwksUri: cfg.jwks_uri,
         cache: true,
         rateLimit: true,
         jwksRequestsPerMinute: 10,
@@ -42,11 +44,13 @@ export function getJWTValidator<DefaultPayload extends JwtPayload>(
       });
     }
 
-    if (!/(^[A-Za-z0-9-_]*\.[A-Za-z0-9-_]*\.[A-Za-z0-9-_]*$)/.test(jwt))
-      throw new JWTValidationError('Invalid JWT Format');
+    console.log('JWT REGEX');
+    if (!JWT_REGEX.test(jwt))
+      throw new JWTValidationError('Invalid JWT Format (' + jwt + ')');
 
     const vPromise = new Promise<Payload>((res, rej) => {
-      return verify(
+      console.log('Verifying JWT');
+      verify(
         jwt,
         (header, cb) => {
           if (!jwksClients[key]) {
@@ -76,14 +80,17 @@ export function getJWTValidator<DefaultPayload extends JwtPayload>(
  * @param header
  * @returns
  */
-export function AuthorizationHeaderToJWT(header: string): string {
-  const jwt: string = header
+export function AuthorizationHeaderToJWT(authString?: string): string {
+  if (!authString)
+    throw new JWTValidationError('No Authorization Header Provided');
+
+  const jwt: string = authString
     .trim()
-    .replace(/^Bearer/, '')
+    .replace(/^Bearer/i, '')
     .trim();
 
-  if (!/(^[A-Za-z0-9-_]*\.[A-Za-z0-9-_]*\.[A-Za-z0-9-_]*$)/.test(jwt))
-    throw new JWTValidationError('Invalid JWT Format');
+  if (!JWT_REGEX.test(jwt))
+    throw new JWTValidationError('Invalid JWT Format (' + jwt + ')');
 
   return jwt;
 }

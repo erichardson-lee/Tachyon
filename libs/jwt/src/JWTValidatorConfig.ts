@@ -1,7 +1,6 @@
-import { OpenIdConfig } from './OpenIdConfig';
 import { VerifyOptions } from 'jsonwebtoken';
 
 export interface JWTValidatorConfig {
-  openIdConfig: OpenIdConfig;
+  jwks_uri: string;
   verificationOptions: VerifyOptions;
 }
