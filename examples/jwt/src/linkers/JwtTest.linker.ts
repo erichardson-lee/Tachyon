@@ -13,8 +13,8 @@ export default defineLinker({
     const fastify = useFastify();
 
     const jwtValidator = getJWTValidator({
-      jwks_uri: '',
-      verificationOptions: { algorithms: ['none'] },
+      jwks_uri: '', // REPLACE WITH THE JWKS URL you use.
+      verificationOptions: { algorithms: ['RS256'] },
     });
 
     fastify.get('/', async () =>
@@ -75,19 +75,29 @@ export default defineLinker({
         const JWT = AuthorizationHeaderToJWT(request.headers.authorization);
 
         console.log('JWT: ', JWT);
-        const payload = await jwtValidator(JWT);
+        const payload = (await jwtValidator(JWT)).payload;
 
-        if (!payload.scopes) throw new JWTValidationError('No Scopes');
+        //@ts-expect-error Typings for jwtPayload makes these unknown.
+        const scopes = getScopes(payload.scopes ?? payload.scp);
 
-        const isValid = validateScopes(payload.scopes, ['admin']);
+        if (!scopes) throw new JWTValidationError('No Scopes');
+
+        if (!Array.isArray(scopes)) {
+          throw new JWTValidationError('Scopes is not an array');
+        }
+
+        const isValid = validateScopes(scopes, ['##EXAMPLE.SCOPE##']); // Replace with your required scopes
 
         if (!isValid)
           return response.code(401).send({
             $message: 'Invalid Scopes, Scope admin required',
-            scopes: payload.scopes,
+            scopes,
           });
 
-        response.send(payload);
+        response.send({
+          $message: 'Valid JWT, Scopes are valid',
+          scopes,
+        });
       } catch (e) {
         if (e instanceof JWTValidationError) {
           // Invalid JWT
@@ -97,3 +107,9 @@ export default defineLinker({
     });
   },
 });
+
+export const getScopes = (scopes?: string | string[]) => {
+  if (!scopes) return undefined;
+  if (typeof scopes === 'string') return scopes.split(' ');
+  return scopes;
+};

@@ -1,7 +1,3 @@
-import { JwtPayload } from 'jsonwebtoken';
+import { JWTVerifyResult } from 'jose';
 
-export type JWTValidateFunction<DefaultPayload extends JwtPayload> = <
-  Payload extends DefaultPayload,
->(
-  jwt: string,
-) => Promise<Payload>;
+export type JWTValidateFunction = (jwt: string) => Promise<JWTVerifyResult>;

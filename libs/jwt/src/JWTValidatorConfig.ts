@@ -1,6 +1,6 @@
-import { VerifyOptions } from 'jsonwebtoken';
+import { JWTVerifyOptions } from 'jose';
 
-export interface JWTValidatorConfig {
+export type JWTValidatorConfig = {
   jwks_uri: string;
-  verificationOptions: VerifyOptions;
-}
+  verificationOptions: JWTVerifyOptions;
+};
